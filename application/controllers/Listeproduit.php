@@ -8,7 +8,7 @@ class Listeprpoduit extends BaseController {
 		parent::__construct();
 	}
 
-	public function listeproduit()
+	public function listeProduit()
 	{
 		$this->load->model('Produit');
 		$c=new Produit();
