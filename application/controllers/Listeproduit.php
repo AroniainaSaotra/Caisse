@@ -13,11 +13,10 @@ class Listeprpoduit extends BaseController {
 		$c=new Produit();
 		$c=$c->listeProduit();
 		$data=array();
-		$data["caisse"]=$c;
-		$data['vue']='accueil.php';
+		$data['vue']='listeproduit.php';
 		$this->load->view('template',$data);
 	}	
 
-	
+}
 
 	
