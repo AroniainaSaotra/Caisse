@@ -22,9 +22,9 @@
                     <tbody>
                     <?php for($i=0;$i<count($achat);$i++) { ?>
                         <tr>
-                            <td scope="row"><?php echo $achat[$i]->getNom() ?></td>
+                            <td scope="row"><?php echo $achat[$i]->getNomProduit() ?></td>
                             <td scope="row"><?php echo $achat[$i]->getPrix() ?></td>
-                            <td scope="row"><?php echo $achat[$i]->getQuantite() ?></td>
+                            <td scope="row"><?php echo $achat[$i]->getQuantiteAchat() ?></td>
                             <td scope="row"><?php echo $achat[$i]->getMontant() ?></td>
                         </tr>
                         
@@ -47,7 +47,7 @@
                 <select class="form-control " name="produit" id="produit" required>
                     <option value="">choisissez</option>
                     <?php for($i=0;$i<count($produit);$i++){ ?>
-                        <option value="<?php echo $produit[$i]->getId() ?>"><?php echo $produit[$i]->getNom() ?></option>
+                        <option value="<?php echo $produit[$i]->getIdAchat() ?>"><?php echo $produit[$i]->getNomProduit() ?></option>
                     <?php } ?>
                 </select>
 

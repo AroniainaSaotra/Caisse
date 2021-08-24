@@ -1,9 +1,9 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
     class DetailsAchat extends CI_Model{
         private $idCaisse;
-        private $nom;
+        private $nomProduit;
         private $prix;
-        private $quantite;
+        private $quantiteAchat;
         private $montant;
 
         public function listeAchat($idCaisse){
@@ -14,9 +14,9 @@
             foreach($query->result_array() as $row){
                 $a=new DetailsAchat;
                 $a->setIdCaisse($row['idCaisse']);
-                $a->setNom($row['nom']);
+                $a->setNomProduit($row['nom']);
                 $a->setPrix($row['prix']);
-                $a->setQuantite($row['quantite']);
+                $a->setQuantiteAchat($row['quantite']);
                 $a->setMontant($row['montant']);
                 $tab[]=$a;
             }
@@ -46,9 +46,9 @@
         /**
          * Get the value of nom
          */
-        public function getNom()
+        public function getNomProduit()
         {
-                return $this->nom;
+                return $this->nomProduit;
         }
 
         /**
@@ -56,9 +56,9 @@
          *
          * @return  self
          */
-        public function setNom($nom)
+        public function setNomProduit($nom)
         {
-                $this->nom = $nom;
+                $this->nomProduit = $nom;
 
                 return $this;
         }
@@ -86,9 +86,9 @@
         /**
          * Get the value of quantite
          */
-        public function getQuantite()
+        public function getQuantiteAchat()
         {
-                return $this->quantite;
+                return $this->quantiteAchat;
         }
 
         /**
@@ -96,9 +96,9 @@
          *
          * @return  self
          */
-        public function setQuantite($quantite)
+        public function setQuantiteAchat($quantite)
         {
-                $this->quantite = $quantite;
+                $this->quantiteAchat = $quantite;
 
                 return $this;
         }

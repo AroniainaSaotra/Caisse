@@ -10,7 +10,7 @@
                 <label for="caisse"><h3>Choissir une caisse</h3></label>
                 <select class="form-control" name="caisse" id="caisse">
                     <?php for($i=0;$i<count($caisse);$i++) { ?>
-                        <option value="<?php echo $caisse[$i]->getId() ?>"><?php echo $caisse[$i]->getNumero() ?></option>
+                        <option value="<?php echo $caisse[$i]->getIdCaisse() ?>"><?php echo $caisse[$i]->getNumero() ?></option>
                     <?php } ?>
                 </select>
             </div>
