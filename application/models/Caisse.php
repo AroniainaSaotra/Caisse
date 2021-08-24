@@ -1,22 +1,22 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
     // require('Mere.php');
     class Caisse extends CI_Model{
-        private $id;
-        private $numero;
+        private $idCaisse;
+        private $numeroCaisse;
 
-        public function getId() { 
-            return $this->id; 
+        public function getIdCaisse() { 
+            return $this->idCaisse; 
         } 
 
-        public function setId($id) {  
-            $this->id = $id; 
+        public function setIdCaisse($id) {  
+            $this->idCaisse = $id; 
         } 
 
-        public function getNumero() { 
-            return $this->numero; 
+        public function getNumeroCaisse() { 
+            return $this->numeroCaisse; 
         } 
 
-        public function setNumero($numero) {  
+        public function setNumeroCaisse($numero) {  
             $this->numero = $numero; 
         } 
 
@@ -26,8 +26,8 @@
             $i=0;
             foreach($query->result_array() as $row){
                 $c=new Caisse();
-                $c->setId($row['id']);
-                $c->setNumero($row['numero']);
+                $c->setIdCaisse($row['id']);
+                $c->setNumeroCaisse($row['numero']);
                 $tab[$i]=$c;
                 $i++;
             }

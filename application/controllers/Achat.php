@@ -37,7 +37,7 @@ class Achat extends BaseController {
 		$a=new Achat();
 		$a->setIdCaisse($idCaisse);
 		$a->setIdProduit($idPro);
-		$a->setQuantite($nb);
+		$a->setQuantiteAchat($nb);
 		$a->insert();
 
 		$d=new DetailsAchat();

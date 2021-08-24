@@ -1,24 +1,24 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
     // require('Mere.php');
     class Achat extends CI_Model{
-        private $id;
+        private $idAchat;
         private $idCaisse;
         private $idProduit;
-        private $quantite;
+        private $quantiteAchat;
         private $dateAchat;
 
         public function insert(){
             $cur='curdate()';
-            $req=('insert into achat (idCaisse,idProduit,quantite,dateAchat) VALUES ('.$this->getIdCaisse().','.$this->getIdProduit().','.$this->getQuantite().','.$cur.')');
+            $req=('insert into achat (idCaisse,idProduit,quantite,dateAchat) VALUES ('.$this->getIdCaisse().','.$this->getIdProduit().','.$this->getQuantiteAchat().','.$cur.')');
             $this->db->query($req);
         }
         
-        public function getId() { 
-            return $this->id; 
+        public function getIdAchat() { 
+            return $this->idAchat; 
         } 
 
-        public function setId($id) {  
-            $this->id = $id; 
+        public function setIdAchat($id) {  
+            $this->idAchat = $id; 
         } 
 
         public function getIdCaisse() { 
@@ -31,11 +31,11 @@
 
       
 
-        public function getQuantite() { 
-            return $this->quantite; 
+        public function getQuantiteAchat() { 
+            return $this->quantiteAchat; 
         } 
 
-        public function setQuantite($quantite) {  
+        public function setQuantiteAchat($quantite) {  
             $this->quantite = $quantite; 
         } 
 

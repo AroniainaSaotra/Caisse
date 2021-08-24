@@ -1,10 +1,11 @@
 <?php if(! defined('BASEPATH')) exit('No direct script access allowed');
     // require('Mere.php');
     class Produit extends CI_Model{
-        private $id;
-        private $nom;
+        private $idProduit;
+        private $nomProduit;
+        private $categorie;
         private $prix;
-        private $stock;
+        private $quantiteStock;
 
         function listeProduit(){
             $query= $this->db->query('SELECT *FROM produit');
@@ -12,10 +13,10 @@
             $i=0;
             foreach($query->result_array() as $row){
                 $p=new Produit();
-                $p->setId($row['id']);
-                $p->setNom($row['nom']);
+                $p->setIdProduit($row['id']);
+                $p->setNomProduit($row['nom']);
                 $p->setPrix($row['prix']);
-                $p->setStock($row['stock']);
+                $p->setQuantiteStock($row['stock']);
                 $tab[$i]=$p;
                 $i++;
             }
@@ -25,9 +26,9 @@
         /**
          * Get the value of id
          */
-        public function getId()
+        public function getIdProduit()
         {
-                return $this->id;
+                return $this->idProduit;
         }
 
         /**
@@ -35,9 +36,9 @@
          *
          * @return  self
          */
-        public function setId($id)
+        public function setIdProduit($id)
         {
-                $this->id = $id;
+                $this->idProduit = $id;
 
                 return $this;
         }
@@ -45,9 +46,9 @@
         /**
          * Get the value of nom
          */
-        public function getNom()
+        public function getNomProduit()
         {
-                return $this->nom;
+                return $this->nomProduit;
         }
 
         /**
@@ -55,9 +56,9 @@
          *
          * @return  self
          */
-        public function setNom($nom)
+        public function setNomProduit($nom)
         {
-                $this->nom = $nom;
+                $this->nomProduit = $nom;
 
                 return $this;
         }
@@ -85,7 +86,7 @@
         /**
          * Get the value of stock
          */
-        public function getStock()
+        public function getQuantiteStock()
         {
                 return $this->stock;
         }
@@ -95,9 +96,9 @@
          *
          * @return  self
          */
-        public function setStock($stock)
+        public function setQuantiteStock($stock)
         {
-                $this->stock = $stock;
+                $this->quantiteStock = $stock;
 
                 return $this;
         }
