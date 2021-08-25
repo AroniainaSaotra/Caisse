@@ -36,7 +36,7 @@ class Accueil extends CI_Controller {
         $this->load->model('Produit');
         $c=new Produit();
         $c=$c->categorieTechnologie();
-        $data['prod']=$c;
+        $data['prodtechno']=$c;
         $data['vue']='commandecaisse.php';
         $this->load->view('template',$data);
     }
