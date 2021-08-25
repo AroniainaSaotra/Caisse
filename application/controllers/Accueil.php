@@ -22,7 +22,11 @@ class Accueil extends CI_Controller {
 	public function choix(){
 		$caisse=$this->input->post("caisse");
 		$this->session->set_userdata('idCaisse',$caisse);
-		redirect(site_url("Achat/saisie"));
+		redirect(base_url("Achat/saisie"));
+	}
+
+	public function tsotra(){
+	$this->load->view('commandecaisse');
 	}
 
 	
