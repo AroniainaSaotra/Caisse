@@ -1,5 +1,9 @@
-<div class="container" style="width:400px; height:450px; border:2px solid red; text-align:center;">
-    <table class="table" style="width:400px; height:450px;">
+<?php
+
+?>
+<div class="container" style="width:400px; height:450px; border:2px solid red; text-align:center;" >
+<form action="<?php echo site_url("commandecaisse/listeFinProd") ?>">
+    <table class="table" style="width:400px; height:450px;">  
   <caption><h2>Nouriture</h2></caption>
   <thead>
     <tr>
@@ -10,24 +14,16 @@
   </thead>
 </br>
   <tbody>
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    <?php for($i=0;$i<count($prod);$i++) { ?> 
+        <td> <?php echo $prod[$i]->getImages() ?></td>
+        <td> <?php echo $prod[$i]->getNom() ?></td>
+        <td> <?php echo $prod[$i]->getPrix() ?></td>  
+    <?php } ?> 
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
 </table>
+</form>
 </div>

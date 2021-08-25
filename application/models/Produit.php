@@ -28,59 +28,32 @@
 
         function categorieNouriturre(){
                 $query= $this->db->query('SELECT * FROM produit where categorie=Nouriturre');
-                $tab=array();
-                $i=0;
-            foreach($query->result_array() as $row){
-                $p=new Produit();
-                $p->setId($row['id']);
-                $p->setCategorie($row['categorie']);
-                $p->setNom($row['nom']);
-                $p->setPrix($row['prix']);
-                $p->setImages($row['images']);
-                $p->setStock($row['stock']);
-                $tab[$i]=$p;
-                $i++;
-            }
-            return $tab;
-
+                return $query->result_array();
         }
 
         function categorieJouet(){
                 $query= $this->db->query('SELECT * FROM produit where categorie=Jouets');
-                $tab=array();
-                $i=0;
-            foreach($query->result_array() as $row){
-                $p=new Produit();
-                $p->setId($row['id']);
-                $p->setCategorie($row['categorie']);
-                $p->setNom($row['nom']);
-                $p->setPrix($row['prix']);
-                $p->setImages($row['images']);
-                $p->setStock($row['stock']);
-                $tab[$i]=$p;
-                $i++;
-            }
-            return $tab;
-
+                return $query->result_array();
         }
 
         function categorieTechnologie(){
                 $query= $this->db->query('SELECT * FROM produit where categorie=Technologies');
-                $tab=array();
-                $i=0;
-            foreach($query->result_array() as $row){
-                $p=new Produit();
-                $p->setId($row['id']);
-                $p->setCategorie($row['categorie']);
-                $p->setNom($row['nom']);
-                $p->setPrix($row['prix']);
-                $p->setImages($row['images']);
-                $p->setStock($row['stock']);
-                $tab[$i]=$p;
-                $i++;
-            }
-            return $tab;
+                return $query->result_array();
 
+        }
+        function listeNomProd()
+        {
+                $req=$this->db->query('SELECT nom FROM produit where categorie=Nourriturre');
+                return $req->result_array();
+        }
+        function listePrix()
+        {
+                $req=$this->db->query('SELECT prix FROM produit where categorie=Nourriturre');
+                return $req->result_array();
+        }
+        function listeImage(){
+                $req=$this->db->query('SELECT images FROM produit where categorie=Nourriturre');
+                return $req->result_array();
         }
        
 
