@@ -1,6 +1,7 @@
 <?php
 class Produit extends CI_Controller{
 	function _construct(){
+
 		parent::_construct();
 		$this->load->model('ProduitModel');
 	}
