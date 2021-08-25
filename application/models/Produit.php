@@ -3,7 +3,9 @@
     class Produit extends CI_Model{
         private $id;
         private $nom;
+        private $categorie;
         private $prix;
+        private $images;
         private $stock;
 
         function listeProduit(){
@@ -13,14 +15,74 @@
             foreach($query->result_array() as $row){
                 $p=new Produit();
                 $p->setId($row['id']);
+                $p->setCategorie($row['categorie']);
                 $p->setNom($row['nom']);
                 $p->setPrix($row['prix']);
+                $p->setImages($row['images']);
                 $p->setStock($row['stock']);
                 $tab[$i]=$p;
                 $i++;
             }
             return $tab;
         }
+
+        function categorieNouriturre(){
+                $query= $this->db->query('SELECT * FROM produit where categorie=Nouriturre');
+                $tab=array();
+                $i=0;
+            foreach($query->result_array() as $row){
+                $p=new Produit();
+                $p->setId($row['id']);
+                $p->setCategorie($row['categorie']);
+                $p->setNom($row['nom']);
+                $p->setPrix($row['prix']);
+                $p->setImages($row['images']);
+                $p->setStock($row['stock']);
+                $tab[$i]=$p;
+                $i++;
+            }
+            return $tab;
+
+        }
+
+        function categorieJouet(){
+                $query= $this->db->query('SELECT * FROM produit where categorie=Jouets');
+                $tab=array();
+                $i=0;
+            foreach($query->result_array() as $row){
+                $p=new Produit();
+                $p->setId($row['id']);
+                $p->setCategorie($row['categorie']);
+                $p->setNom($row['nom']);
+                $p->setPrix($row['prix']);
+                $p->setImages($row['images']);
+                $p->setStock($row['stock']);
+                $tab[$i]=$p;
+                $i++;
+            }
+            return $tab;
+
+        }
+
+        function categorieTechnologie(){
+                $query= $this->db->query('SELECT * FROM produit where categorie=Technologies');
+                $tab=array();
+                $i=0;
+            foreach($query->result_array() as $row){
+                $p=new Produit();
+                $p->setId($row['id']);
+                $p->setCategorie($row['categorie']);
+                $p->setNom($row['nom']);
+                $p->setPrix($row['prix']);
+                $p->setImages($row['images']);
+                $p->setStock($row['stock']);
+                $tab[$i]=$p;
+                $i++;
+            }
+            return $tab;
+
+        }
+       
 
         /**
          * Get the value of id
@@ -100,6 +162,26 @@
                 $this->stock = $stock;
 
                 return $this;
+        }
+
+        public function getImages()
+        {
+                return $this->images;
+        }
+
+        public function setImages($im)
+        {
+                $this->images = $im;
+        }
+
+        public function getCategorie()
+        {
+                return $this->categorie;
+        }
+
+        public function setCategorie($cat)
+        {
+                $this->categorie = $cat;
         }
     }
 
