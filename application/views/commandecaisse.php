@@ -1,6 +1,7 @@
 <?php
 $prod=$_GET['prod'];
 $prodjouet=$_GET['prodjouet'];
+$prodtechno=$_GET['prodtechno'];
 
 $total=0;
 for($i=0;$i<count($achat);$i++){
@@ -20,7 +21,6 @@ for($i=0;$i<count($achat);$i++){
   </thead>
 </br>
   <tbody>
-
     <tr>
     <?php for($i=0;$i<count($prod);$i++) { ?> 
         <td> <?php echo $prod[$i]->getImages() ?></td>
