@@ -1,5 +1,6 @@
 <?php
 $prod=$_GET['prod'];
+$prodjouet=$_GET['prodjouet'];
 
 $total=0;
 for($i=0;$i<count($achat);$i++){
@@ -49,9 +50,9 @@ for($i=0;$i<count($achat);$i++){
 
     <tr>
     <?php for($i=0;$i<count($prod);$i++) { ?> 
-        <td> <?php echo $prod[$i]->getImages() ?></td>
-        <td> <?php echo $prod[$i]->getNom() ?></td>
-        <td> <?php echo $prod[$i]->getPrix() ?></td>  
+        <td> <?php echo $prodjouet[$i]->getImages() ?></td>
+        <td> <?php echo $prodjouet[$i]->getNom() ?></td>
+        <td> <?php echo $projouetd[$i]->getPrix() ?></td>  
     <?php } ?> 
     </tr>
     

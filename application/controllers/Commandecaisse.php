@@ -18,7 +18,7 @@ class Accueil extends CI_Controller {
 		$data['vue']='commandecaisse.php';
 		$this->load->view('template',$data);
 	}	
-    vazlzmgiehamkvj
+    
 
     public function listeFinProdJouets()
     {
@@ -26,7 +26,7 @@ class Accueil extends CI_Controller {
         $c=new Produit();
         $c=$c->categorieJouet();
         $data=array();
-        $data['prod']=$c;
+        $data['prodjouet']=$c;
         $data['vue']='commandecaisse.php';
         $this->load->view('template',$data);
     }
