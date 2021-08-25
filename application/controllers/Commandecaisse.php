@@ -18,6 +18,7 @@ class Accueil extends CI_Controller {
 		$data['vue']='commandecaisse.php';
 		$this->load->view('template',$data);
 	}	
+    vazlzmgiehamkvj
 
     public function listeFinProdJouets()
     {
